@@ -5,7 +5,7 @@ import constantes
 from personaje import Personaje
 from mundo import Mundo
 
-
+# cambio de prueba
 
 #inicializar pygame
 pygame.init()
