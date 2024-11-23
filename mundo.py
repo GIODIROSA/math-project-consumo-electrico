@@ -11,7 +11,7 @@ class Mundo:
         self.alto = alto
         self.elemento = [Refrigerador(random.randint(0, ancho-40),random.randint(0, alto-40)) for _ in range(1)]
 
-        grass_piso = os.path.join('imagenes','pisovf.png')
+        grass_piso = os.path.join('imagenes','floor.png')
         self.grass_image = pygame.image.load(grass_piso).convert()
         self.grass_image = pygame.transform.scale(self.grass_image, (constantes.GRASS, constantes.GRASS))
 
