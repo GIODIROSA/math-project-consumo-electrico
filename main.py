@@ -1,25 +1,31 @@
 import pygame
 import sys
 import constantes
-
 from personaje import Personaje
 from mundo import Mundo
-
-# cambio de prueba
 
 #inicializar pygame
 pygame.init()
 
-
 ventana = pygame.display.set_mode((constantes.ANCHO_VENTANA,constantes.ALTO_VENTANA))
-
-#nombre juego
 pygame.display.set_caption("CRECE")
+
+def escalar_img(image, scale):
+    w = image.get_width()
+    h = image.get_height()
+    nueva_imagen = pygame.transform.scale(image, (w * scale, h * scale))
+    return nueva_imagen
+
+animaciones = []
+for i in range(9):
+    img = pygame.image.load(f"assets/images/characters/player//player_{i}.png")
+    img= escalar_img(img, constantes.ESCALA_PERSONAJE)
+    animaciones.append(img)
 
 def main():
     clock = pygame.time.Clock()
     mundo = Mundo(constantes.ANCHO_VENTANA, constantes.ALTO_VENTANA)
-    personaje = Personaje(constantes.ANCHO_VENTANA // 2, constantes.ALTO_VENTANA // 2)
+    personaje = Personaje(constantes.ANCHO_VENTANA // 2, constantes.ALTO_VENTANA // 2, animaciones)
 
     #bucle del juego
     while True:
@@ -42,6 +48,7 @@ def main():
             personaje.move(0,5, mundo)
 
         mundo.draw(ventana)
+        personaje.update()
         personaje.draw(ventana)
         mundo.draw_inventory(ventana, personaje)
 
