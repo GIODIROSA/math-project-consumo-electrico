@@ -24,8 +24,8 @@ def main():
     #modificacion de animaciones desde fuera de la funcion, hacia adentro
     animaciones = []
     for i in range(9):
-        img = pygame.image.load(f"assets/images/characters/player/player_{i}.png")
-        img= escalar_img(img, constantes.ESCALA_PERSONAJE)
+        img = pygame.image.load(f"assets//images//characters//player//player_{i}.png")
+        img= escalar_img(img, constantes.ESCALA_PERSONAJE) 
         animaciones.append(img)
 
     accion = pantalla_inicio (ventana)
