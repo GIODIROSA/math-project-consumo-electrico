@@ -5,8 +5,8 @@ from personaje import Personaje
 from mundo import Mundo
 from menu_principal import pantalla_inicio
 
-#inicializar pygame
 
+#inicializar pygame
 
 def escalar_img(image, scale):
     w = image.get_width()

@@ -40,7 +40,7 @@ class Personaje:
         new_x = self.x + dx
         new_y = self.y + dy
 
-        for elemento in mundo.elemento:
+        for elemento in mundo.elementos:
             if self.check_collision(new_x, new_y, elemento):
                 return
             
@@ -59,9 +59,9 @@ class Personaje:
     
     
     def interact(self, mundo):
-        for elemento in mundo.elemento:
+        for elemento in mundo.elementos:
             if self.is_near(elemento):
-                if elemento.chop():
+                if elemento.usar():
                     self.inventory["valor"] += 1
                     if elemento.valor == 0:
                         #elemento.imagen = pygame.image.load('imagenes', 'refri1.png')

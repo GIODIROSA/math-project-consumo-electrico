@@ -6,7 +6,7 @@ def pantalla_inicio(ventana):
     letras_botones = pygame.font.Font(None, 36)
 
     titulo = letras_titulo.render("Bienvenido a CRECE", True, constantes.COLOR_BLANCO)
-    texto_jugar = letras_botones.render("Jugar", True, constantes.COLOR_NEGRO)
+    texto_jugar = letras_botones.render("Iniciar", True, constantes.COLOR_NEGRO)
     texto_salir = letras_botones.render("Salir", True, constantes.COLOR_NEGRO)
 
     boton_jugar = pygame.Rect(constantes.ANCHO_VENTANA / 2 - 100, 
