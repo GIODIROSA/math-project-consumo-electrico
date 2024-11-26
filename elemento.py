@@ -15,6 +15,7 @@ class Electrodomestico:
         ventana.blit(self.image, (self.x, self.y))
 
     def usar(self):
+
         #if self.valor >= 0:
         self.valor += 1
         return True
@@ -30,42 +31,52 @@ class Refrigerador(Electrodomestico):
         print(f"Refrigerador valor: {self.valor}")
         return True
 
+
 class Televisor(Electrodomestico):
     def __init__(self, x, y):
         imagen = os.path.join('imagenes', 'refri1.png')
         super().__init__(x, y, imagen, valor=0)
+
 
     def usar(self):
         self.valor += 50
         print(f"Televisor valor: {self.valor}")
         return True
 
+
+
 class Lavadora(Electrodomestico):
     def __init__(self, x, y):
         imagen = os.path.join('imagenes', 'refri1.png')
         super().__init__(x, y, imagen, valor=0)
+
 
     def usar(self):
         self.valor += 30
         print(f"Lavadora valor: {self.valor}")
         return True
 
+
 class Calefactor(Electrodomestico):
     def __init__(self, x, y):
         imagen = os.path.join('imagenes', 'refri1.png')
         super().__init__(x, y, imagen, valor=0)
+
 
     def usar(self):
         self.valor += 2
         print(f"Calefactor valor: {self.valor}")
         return True
 
+
 class AireAcondicionado(Electrodomestico):
     def __init__(self, x, y):
         imagen = os.path.join('imagenes', 'refri1.png')
         super().__init__(x, y, imagen, valor=0)
 
+
     def usar(self):
         self.valor += 2
         print(f"AireAcondicionado valor: {self.valor}")
         return True
+

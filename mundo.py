@@ -10,13 +10,7 @@ class Mundo:
         self.alto = alto
 
       
-        self.elementos = [
-            #Refrigerador(random.randint(0, ancho - 40), random.randint(0, alto - 40)),
-            #Televisor(random.randint(0, ancho - 40), random.randint(0, alto - 40)),
-            #Lavadora(random.randint(0, ancho - 40), random.randint(0, alto - 40)),
-            #Calefactor(random.randint(0, ancho - 40), random.randint(0, alto - 40)),
-            #AireAcondicionado(random.randint(0, ancho - 40), random.randint(0, alto - 40)),
-        ]
+        self.elementos = []
 
         # Método para agregar elementos sin colisiones
         self.agregar_elemento(Refrigerador)
@@ -25,9 +19,11 @@ class Mundo:
         self.agregar_elemento(Calefactor)
         self.agregar_elemento(AireAcondicionado)
 
+
         grass_piso = os.path.join('imagenes', 'floor.png')
         self.grass_image = pygame.image.load(grass_piso).convert()
         self.grass_image = pygame.transform.scale(self.grass_image, (constantes.GRASS, constantes.GRASS))
+
 
 
     def agregar_elemento(self, clase_elemento):
@@ -56,6 +52,7 @@ class Mundo:
         for y in range(0, self.alto, constantes.GRASS):
             for x in range(0, self.ancho, constantes.GRASS):
                 ventana.blit(self.grass_image, (x, y))
+
 
         # Dibujar todos los elementos
         for elemento in self.elementos:
