@@ -27,7 +27,7 @@ class Refrigerador(Electrodomestico):
         super().__init__(x, y, imagen, valor=0)
 
     def usar(self):
-        self.valor += 256
+        self.valor += 40*192/30 #cantidad kwh * valor kwh / dias del mes
         print(f"Refrigerador valor: {self.valor}")
         return True
 
@@ -39,7 +39,7 @@ class Televisor(Electrodomestico):
 
 
     def usar(self):
-        self.valor += 832
+        self.valor += 130*192/30 #cantidad kwh * valor kwh / dias del mes
         print(f"Televisor valor: {self.valor}")
         return True
 
@@ -52,7 +52,7 @@ class Lavadora(Electrodomestico):
 
 
     def usar(self):
-        self.valor += 1024
+        self.valor += 70*192/8 #cantidad kwh * valor kwh / dias posible uso mensual(2 veces a la semana)
         print(f"Lavadora valor: {self.valor}")
         return True
 
@@ -64,7 +64,7 @@ class Calefactor(Electrodomestico):
 
 
     def usar(self):
-        self.valor += 1600
+        self.valor += 350*192/30 #cantidad kwh * valor kwh / dias del mes
         print(f"Calefactor valor: {self.valor}")
         return True
 
@@ -76,7 +76,7 @@ class AireAcondicionado(Electrodomestico):
 
 
     def usar(self):
-        self.valor += 1500
+        self.valor += 320*192/30 #cantidad kwh * valor kwh / dias del mes
         print(f"AireAcondicionado valor: {self.valor}")
         return True
 
