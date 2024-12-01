@@ -1,0 +1,51 @@
+import pygame
+import sys
+import constantes
+
+
+
+
+pygame.init()
+
+
+ventana = pygame.display.set_mode((constantes.ANCHO_VENTANA,constantes.ALTO_VENTANA))
+
+#nombre juego
+pygame.display.set_caption("CRECE")
+
+#fondo
+fondo=pygame.image.load("imagenes/piso2.jpg")
+ventana.blit(fondo,(0,0))
+
+#fondo=pygame.image.load("imagenes/ac.jpg")
+#ventana.blit(fondo,(250,25))
+
+#fondo=pygame.image.load("imagenes/estufa.jpg")
+#ventana.blit(fondo,(10,380))
+
+#fondo=pygame.image.load("imagenes/refri.jpg")
+#ventana.blit(fondo,(810,210))
+
+
+#casa rectangulo
+#pygame.draw.rect(ventana, constantes.COLOR_GRAFITO, (300,300, constantes.ANCHO_RECTANGULO,constantes.ALTO_RECTANGULO))
+
+#pygame.draw.rect(ventana, constantes.COLOR_NEGRO, (320,320, constantes.ANCHO_RELLENO_RECTANGULO,constantes.ALTO_RELLENO_RECTANGULO),)
+#pasto
+#pygame.draw.rect(ventana, constantes.COLOR_VERDE, (0,500, constantes.ANCHO_PASTO,constantes.ALTO_PASTO))
+#techo triangulo
+#pygame.draw.polygon(ventana, constantes.COLOR_GRAFITO, [(300,300),(450,150),(600,300)])
+
+
+
+#bucle del juego
+run = True
+while run:
+    
+    for event in pygame.event.get():
+        if event.type ==pygame.QUIT:
+            run = False
+
+    pygame.display.update()
+pygame.quit()
+
